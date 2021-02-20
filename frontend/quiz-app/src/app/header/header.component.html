@@ -1,0 +1,6 @@
+<div style="background-color: black;" class="header">
+<div (click)="go_to_home()" style=" float: left; color: white; margin-left: 10px; cursor: pointer;">Home</div>
+<div (click)="login()" style=" float: right; color: white; margin-left: 20px; margin-right: 10px; cursor: pointer;" *ngIf="!login_check">Login</div>
+<div (click)="signup()" style=" float: right; color: white; margin-left: 20px; cursor: pointer;" *ngIf="!login_check">Signup</div>
+<div (click)="logout()" *ngIf="login_check" style=" float: right; color: white;margin-right: 10px; cursor: pointer;">Logout</div>
+</div>

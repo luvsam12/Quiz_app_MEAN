@@ -1,0 +1,8 @@
+<div (click)="back()">Back</div>
+<div class="container">
+  <input class="input" type="text" #name placeholder="name">
+  <input class="input" type="email" #email placeholder="email">
+  <input class="input" type="tpassword" #password placeholder="password">
+  <input class="input" type="text" #username placeholder="username">
+  <button class="login" (click)="signup(name.value,email.value,password.value, username.value)">Signup</button>
+</div>
