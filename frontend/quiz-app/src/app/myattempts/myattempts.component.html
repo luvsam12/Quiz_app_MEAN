@@ -1,0 +1,27 @@
+<!-- <div style="display: block;">
+  <canvas baseChart width="400" height="400"
+    [datasets]="lineChartData"
+    [labels]="lineChartLabels"
+    [options]="lineChartOptions"
+    [colors]="lineChartColors"
+    [legend]="lineChartLegend"
+    [chartType]="lineChartType"
+    [plugins]="lineChartPlugins">
+  </canvas>
+</div> -->
+<div class="middlescreen-container">
+  <table>
+    <tr>
+      <th>User_id</th>
+      <th>Date</th>
+      <th>Score</th>
+    </tr>
+    <tr *ngFor="let data1 of data">
+      <td>{{data1.user_id}}</td>
+      <td>{{data1.date}}</td>
+      <td>{{data1.score}}</td>
+    </tr>
+  </table>
+</div>
+
+

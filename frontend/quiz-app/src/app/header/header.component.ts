@@ -10,10 +10,14 @@ import { AuthenticationService } from './../shared/authentication.service';
 export class HeaderComponent implements OnInit {
 
   login_check = this.AuthenticationService.check_login()
-
+  small_screen = (window.innerWidth < 850) ? true : false;
   constructor(private Router:Router,
               private AuthenticationService: AuthenticationService
             ) { }
+
+            ngOnChanges(){
+              this.small_screen = (window.innerWidth < 850) ? true : false;
+            }
 
   ngOnInit(): void {
 

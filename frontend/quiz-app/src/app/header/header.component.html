@@ -1,6 +1,46 @@
-<div style="background-color: black;" class="header">
-<div (click)="go_to_home()" style=" float: left; color: white; margin-left: 10px; cursor: pointer;">Home</div>
-<div (click)="login()" style=" float: right; color: white; margin-left: 20px; margin-right: 10px; cursor: pointer;" *ngIf="!login_check">Login</div>
-<div (click)="signup()" style=" float: right; color: white; margin-left: 20px; cursor: pointer;" *ngIf="!login_check">Signup</div>
-<div (click)="logout()" *ngIf="login_check" style=" float: right; color: white;margin-right: 10px; cursor: pointer;">Logout</div>
+<div class="header">
+  <div>
+  <img src="../../assets/7.png" alt="" class="header-img" routerLink="/">
+  </div>
+  <div *ngIf="!small_screen" class="tabs small-tabs">
+    <div (click)="go_to_home()" class="tab">Home</div>
+    <div routerLink="/about-author" class="tab">About Author</div>
+    <div routerLink="/myattempts" class="tab" *ngIf="login_check">My Attempts</div>
+    <div (click)="logout()" class="tab" *ngIf="login_check">Bookmarks</div>
+    <div routerLink="/create" class="tab" *ngIf="login_check">Create</div>
+    <div routerLink="/create" class="auth" *ngIf="login_check">Logout</div>
+    <div (click)="login()" class="auth login" *ngIf="!login_check">Login</div>
+    <div (click)="signup()" class="auth signup" *ngIf="!login_check">Signup</div>
+  </div>
+  <div>
+    <button class="menu-btn" *ngIf="small_screen" mat-button [matMenuTriggerFor]="menu"><hr class="hr"><hr class="hr"><hr class="hr"></button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <div (click)="go_to_home()" >Home</div>
+      </button>
+      <button mat-menu-item>
+        <div routerLink="" >About Author</div>
+      </button>
+      <button mat-menu-item *ngIf="login_check">
+        <div (click)="logout()"  >My Attempts</div>
+      </button>
+      <button mat-menu-item *ngIf="login_check">
+         <div (click)="logout()"  >Bookmarks</div>
+      </button>
+      <button mat-menu-item *ngIf="login_check">
+         <div (click)="logout()"  >Create</div>
+      </button>
+      <button mat-menu-item *ngIf="login_check">
+        <div (click)="logout()" >Profile</div>
+      </button>
+      <button mat-menu-item *ngIf="!login_check">
+        <div (click)="login()" >Login</div>
+      </button>
+      <button mat-menu-item *ngIf="!login_check">
+      <div (click)="signup()"  >Signup</div>
+      </button>
+  </mat-menu>
+  </div>
+
+
 </div>

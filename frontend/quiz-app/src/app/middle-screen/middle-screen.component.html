@@ -1,6 +1,9 @@
-<div class="login-text" *ngIf="!login_check">Please login to continue....</div>
+<div class="middlescreen-container">
+  <div class="start-quiz" *ngIf="start" (click)="start_quiz()">Start the Quiz...
+    <i class="fas fa-arrow-right arrow"></i>
+  </div>
 
-<div *ngIf="questions && !retry" class="container">
+<div *ngIf="!start && questions" class="container">
   <div class="score">Score: {{result}}</div>
   <div class="question">Q. {{questions.data[count].question}}</div>
   <div class="option" id="option1" (click)="save_answere('option1')">1. {{questions.data[count].option1}}</div>
@@ -13,3 +16,5 @@
   your score: {{result}}
   <button (click)="retry1()">Retry</button>
 </div>
+</div>
+

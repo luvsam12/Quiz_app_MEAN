@@ -1,3 +1,5 @@
+import { SubmitPopupComponent } from './../submit-popup/submit-popup.component';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { QuestionService } from './../shared/question.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,34 +11,35 @@ import { AuthenticationService } from './../shared/authentication.service';
   styleUrls: ['./middle-screen.component.scss']
 })
 export class MiddleScreenComponent implements OnInit {
-
+  start = true
   login_check = this.AuthenticationService.check_login();
-  questions = undefined;
+  questions;
   count = 0;
   result = 0;
-  retry = false
+  retry = false;
 
   constructor(private AuthenticationService: AuthenticationService,
     private QuestionService: QuestionService,
-    private router : Router) { }
+    private router : Router,
+    private dialogue: MatDialog) { }
 
   ngOnInit(): void {
     if(this.login_check){
       this.QuestionService.get_questions().subscribe(
         data => {
+          // this.shuffle(data);
           this.questions = data;
           console.log(this.questions.data)
-
-
           // Used like so
-          this.shuffle(this.questions);
-          this.shuffel_options();
-          // console.log(data);
+
         }
       )
     }
   }
 
+  start_quiz(){
+    this.start = false;
+  }
   save_answere(ans){
     if(ans === this.questions.data[this.count].answere){
     document.getElementById(ans).style.border = "5px solid green"
@@ -54,25 +57,19 @@ export class MiddleScreenComponent implements OnInit {
       document.getElementById(ans).style.color = "black"
       document.getElementById(this.questions.data[this.count].answere).style.border = "1px solid black"
     document.getElementById(this.questions.data[this.count].answere).style.color = "black"
-    if(this.count != this.questions.data.length){
-      this.count++;
-      this.shuffel_options();
+    if(this.count === 5){
+
+      this.dialogue.open(SubmitPopupComponent, { disableClose: true, data:{score: this.result} });
     }
     else{
-      this.retry = true
+      this.count++;
+      console.log(this.count);
     }
-    }, 3000) ;
+    }, 100) ;
   }
 
 
   //suffel the array
-  shuffel_options(){
-    if(this.questions !== undefined){
-      for(var i=0;i<this.questions.data.lemgth;i++)
-      var array = [this.questions.data[i].option1,this.questions.data[i].option2,this.questions.data[i].option3,this.questions.data[i].option4]
-      this.shuffle(array);
-    }
-  }
 
   shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;

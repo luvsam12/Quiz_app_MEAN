@@ -1,7 +1,13 @@
-<header>
+<header style="z-index: 300;">
   <app-header></app-header>
 </header>
 
-<body>
-  <app-middle-screen></app-middle-screen>
+<body style="height: auto;">
+  <router-outlet></router-outlet>
 </body>
+
+<footer style="z-index: 2;">
+  <app-footer></app-footer>
+</footer>
+
+

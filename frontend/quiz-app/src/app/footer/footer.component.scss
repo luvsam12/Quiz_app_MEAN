@@ -1,0 +1,55 @@
+.coffee{
+  text-align: center;
+  font-size: 45px;
+  font-family: monospace;
+  font-weight: 50;
+  color: #535252;
+}
+
+.connect{
+  text-align: center;
+  font-size: 21px;
+  font-family: emoji;
+  font-weight: 600;
+  color: #6f6c6c;
+  margin: 40px 0px;
+}
+
+.section{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.copyright{
+  padding: 40px 10px 40px 10px;
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.naman{
+  padding: 40px 10px 25px 10px;
+  font-size: 30px;
+  font-family:cursive;
+  text-align: center;
+  color: rgb(238, 175, 81);
+}
+
+.made{
+  text-emphasis: none;
+  text-align: center;
+}
+
+.connectme{
+  padding: 40px 10px 25px 10px;
+  text-align: center;
+}
+
+@media(max-width: 850px){
+ .section{
+   display:block;
+   width: 97%;
+ }
+
+
+}

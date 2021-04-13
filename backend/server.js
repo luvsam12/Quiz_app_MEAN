@@ -4,12 +4,11 @@ const path = require("path");
 const cors = require("cors")
 const passport = require("passport");
 const app = express();
-const bodyParser = require("body-parser")
 require('dotenv').config();
 
 //middlewares.
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -20,7 +19,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //routes
 app.use("/user", require("./routes/user"));
-app.use('/questions', require('./routes/questions'))
+app.use('/questions', require('./routes/questions'));
+app.use('/result', require("./routes/response"));
 
 
 //Database connection

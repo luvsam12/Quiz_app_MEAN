@@ -1,0 +1,71 @@
+<div class="middlescreen-container">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Question</mat-label>
+      <input type="text" matInput [formControl]="emailFormControl" #q>
+      <mat-error *ngIf="!emailFormControl.hasError('required')">
+        Please enter a Question
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Question is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Answere</mat-label>
+      <input type="Answere" matInput [formControl]="emailFormControl" #a>
+      <mat-error *ngIf="!emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Option1</mat-label>
+      <input type="email" matInput [formControl]="emailFormControl" #o1>
+      <mat-error *ngIf="!emailFormControl.hasError('required')">
+        Please enter a valid Option
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Option1 is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Option2</mat-label>
+      <input type="email" matInput [formControl]="emailFormControl" #o2>
+      <mat-error *ngIf="!emailFormControl.hasError('required')">
+        Please enter a valid Option2
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Option2 is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Option3</mat-label>
+      <input type="email" matInput [formControl]="emailFormControl" #o3>
+      <mat-error *ngIf="!emailFormControl.hasError('required')">
+        Please enter a valid Option3
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Option3 is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Option4</mat-label>
+      <input type="email" matInput [formControl]="emailFormControl" #o4>
+      <mat-error *ngIf="!emailFormControl.hasError('required')">
+        Please enter a valid Option4
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Option4 is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button (click)="submit(q.value, a.value, o1.value, o2.value, o3.value, o4.value)">Submit</button>
+  </form>
+</div>

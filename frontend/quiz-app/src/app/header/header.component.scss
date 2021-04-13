@@ -1,9 +1,83 @@
 .header{
-  list-style: none;
-  float: left;
-  width: 100%;
-  margin-top: -70px;
-  background-color: black;
-  height: 40px;
-  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 5fr ;
+  width: 97%;
+  margin-left: 1.5% !important;
+  // margin-top: -70px !important;
+  background-color: #472c9a;
+  height: 70px;
+  position: fixed;
+  // margin-bottom: 20px;
+  top: 0px;
+}
+
+.header-img{
+  zoom: 0.145;
+  margin-left: 320px;
+  border-radius: 500px;
+  cursor: pointer;
+}
+.tabs{
+  margin-left: 20%;
+}
+
+.tab{
+  color: rgb(189, 185, 185);
+   margin: 20px 2% 0px;
+   cursor: pointer;
+   float: left;
+   font-size: 20px;
+   text-align: center;
+}
+
+.tab:hover{
+  color: white;
+}
+
+.auth{
+  color: rgb(189, 185, 185);
+   margin-right: 90px;
+   cursor: pointer;
+   float: right;
+   width: 50px;
+   margin-top: 18px;
+   font-size: 20px;
+}
+
+.login{
+  color: black !important;
+  background-color: white !important;
+  width: 80px !important;
+  text-align: center;
+  height: 30px;
+  margin-top: 13px !important;
+  padding-top: 5px;
+  border-radius: 10px;
+}
+
+.signup{
+  margin-right: 20px;
+}
+
+.auth:hover{
+  color: white;
+}
+
+.menu-btn{
+  float: right;
+  margin-right: 5%;
+  margin-top: 15px;
+  // background-color: white;
+  border-radius: 10px;
+  border: 2px solid #707070;
+}
+
+.hr{
+  line-height: 2px;
+  font-size: 30px;
+  margin: 8px;
+}
+.mat-button{
+  padding: 0px 6px;
+    min-width: 45px;
 }
