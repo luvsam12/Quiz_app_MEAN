@@ -38,7 +38,7 @@ export class HeaderComponent implements OnInit {
   }
 
   go_to_home(){
-    this.Router.navigateByUrl("/")
+    this.Router.navigateByUrl("/home")
   }
 
 }

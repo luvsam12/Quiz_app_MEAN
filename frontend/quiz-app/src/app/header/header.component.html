@@ -6,9 +6,9 @@
     <div (click)="go_to_home()" class="tab">Home</div>
     <div routerLink="/about-author" class="tab">About Author</div>
     <div routerLink="/myattempts" class="tab" *ngIf="login_check">My Attempts</div>
-    <div (click)="logout()" class="tab" *ngIf="login_check">Bookmarks</div>
+    <div routerLink="/about-author" class="tab" *ngIf="login_check">Bookmarks</div>
     <div routerLink="/create" class="tab" *ngIf="login_check">Create</div>
-    <div routerLink="/create" class="auth" *ngIf="login_check">Logout</div>
+    <div (click)="logout()" class="auth" *ngIf="login_check">Logout</div>
     <div (click)="login()" class="auth login" *ngIf="!login_check">Login</div>
     <div (click)="signup()" class="auth signup" *ngIf="!login_check">Signup</div>
   </div>

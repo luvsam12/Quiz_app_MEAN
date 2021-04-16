@@ -10,7 +10,7 @@ import { CreateComponent } from './create/create.component';
 
 const routes: Routes = [
   { path: "", component: MainScreenComponent, children:[
-    { path:"", component: MiddleScreenComponent},
+    { path:"", component: AboutmeComponent},
     { path: "home", component: MiddleScreenComponent},
     { path:"about-author", component: AboutmeComponent},
     { path: 'myattempts', component: MyattemptsComponent},
