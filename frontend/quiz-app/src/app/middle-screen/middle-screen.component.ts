@@ -65,7 +65,7 @@ export class MiddleScreenComponent implements OnInit {
       this.count++;
       console.log(this.count);
     }
-    }, 100) ;
+    }, 2000) ;
   }
 
 
