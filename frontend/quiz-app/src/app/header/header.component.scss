@@ -1,19 +1,23 @@
 .header{
-  display: grid;
-  grid-template-columns: 1fr 5fr ;
+  // display: grid;
+  // grid-template-columns: 1fr 5fr ;
   width: 97%;
   margin-left: 1.5% !important;
   // margin-top: -70px !important;
-  background-color: #472c9a;
-  height: 70px;
-  position: fixed;
+  // background-color: #472c9a !important;
+  // min-height: 70px;
+  // position: fixed;
   // margin-bottom: 20px;
-  top: 0px;
+  // top: 0px;
+}
+
+.fr{
+  float: right;
 }
 
 .header-img{
-  zoom: 0.145;
-  margin-left: 320px;
+  zoom: 0.35;
+  margin-left: -10px;
   border-radius: 500px;
   cursor: pointer;
 }
@@ -34,34 +38,17 @@
   color: white;
 }
 
-.auth{
-  color: rgb(189, 185, 185);
-   margin-right: 90px;
-   cursor: pointer;
-   float: right;
-   width: 50px;
-   margin-top: 18px;
-   font-size: 20px;
+
+
+.fs{
+  font-size: 20px;
 }
 
-.login{
-  color: black !important;
-  background-color: white !important;
-  width: 80px !important;
-  text-align: center;
-  height: 30px;
-  margin-top: 13px !important;
-  padding-top: 5px;
-  border-radius: 10px;
-}
 
-.signup{
-  margin-right: 20px;
-}
 
-.auth:hover{
-  color: white;
-}
+// .auth:hover{
+//   color: white;
+// }
 
 .menu-btn{
   float: right;
@@ -81,3 +68,59 @@
   padding: 0px 6px;
     min-width: 45px;
 }
+
+
+@media(min-width: 850px){
+  .auth{
+    color: rgb(189, 185, 185);
+    //  margin-right: 90px;
+     cursor: pointer;
+    //  float: right;
+     width: 50px;
+    //  margin-top: 18px;
+  }
+
+  .login{
+    color: black !important;
+    background-color: white !important;
+    width: 80px !important;
+    text-align: center;
+    // height: 30px;
+    // margin-top: 13px !important;
+    // padding-top: 5px;
+    border-radius: 10px;
+  }
+
+  .signup{
+    margin-right: 20px;
+  }
+ }
+
+ @media(min-width: 1060px){
+  .header-img{
+    zoom: 0.16;
+    margin-left: -10px;
+    border-radius: 500px;
+    cursor: pointer;
+  }
+}
+
+@media(max-width: 1060px){
+  .header-img{
+    zoom: 0.16;
+    margin-left: -10px;
+    border-radius: 500px;
+    cursor: pointer;
+    float: right !important;
+  }
+  .col-10 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 83.333333%;
+    margin-top: 46px;
+    margin-left: -95px;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+}
+
+}
+

@@ -1,46 +1,45 @@
-<div class="header">
-  <div>
-  <img src="../../assets/7.png" alt="" class="header-img" routerLink="/">
-  </div>
-  <div *ngIf="!small_screen" class="tabs small-tabs">
-    <div (click)="go_to_home()" class="tab">Home</div>
-    <div routerLink="/about-author" class="tab">About Author</div>
-    <div routerLink="/myattempts" class="tab" *ngIf="login_check">My Attempts</div>
-    <div routerLink="/about-author" class="tab" *ngIf="login_check">Bookmarks</div>
-    <div routerLink="/create" class="tab" *ngIf="login_check">Create</div>
-    <div (click)="logout()" class="auth" *ngIf="login_check">Logout</div>
-    <div (click)="login()" class="auth login" *ngIf="!login_check">Login</div>
-    <div (click)="signup()" class="auth signup" *ngIf="!login_check">Signup</div>
-  </div>
-  <div>
-    <button class="menu-btn" *ngIf="small_screen" mat-button [matMenuTriggerFor]="menu"><hr class="hr"><hr class="hr"><hr class="hr"></button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>
-        <div (click)="go_to_home()" >Home</div>
-      </button>
-      <button mat-menu-item>
-        <div routerLink="" >About Author</div>
-      </button>
-      <button mat-menu-item *ngIf="login_check">
-        <div (click)="logout()"  >My Attempts</div>
-      </button>
-      <button mat-menu-item *ngIf="login_check">
-         <div (click)="logout()"  >Bookmarks</div>
-      </button>
-      <button mat-menu-item *ngIf="login_check">
-         <div (click)="logout()"  >Create</div>
-      </button>
-      <button mat-menu-item *ngIf="login_check">
-        <div (click)="logout()" >Profile</div>
-      </button>
-      <button mat-menu-item *ngIf="!login_check">
-        <div (click)="login()" >Login</div>
-      </button>
-      <button mat-menu-item *ngIf="!login_check">
-      <div (click)="signup()"  >Signup</div>
-      </button>
-  </mat-menu>
-  </div>
+<nav class="navbar navbar-dark bg-info header navbar-expand-lg">
+  <div class="container-fluid px-0">
+    <div class="row w-100">
+      <div class="col-2">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation" (click)="isShown = !isShown" >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
 
-
-</div>
+      <div class="col-10">
+        <div class="collapse justify-content-end navbar-collapse" [ngClass]="{ 'show': isShown }" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mt-2 mt-lg-0">
+            <li class="nav-item ">
+              <a class="nav-link fs" id="Home" routerLink="home" (click)="change_active('Home')" >Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link fs" id="About" routerLink="" (click)="change_active('About')" >About me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs" id="Attempts" routerLink="myattempts" (click)="change_active('Attempts')" *ngIf="login_check">Attempts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs" id="Bookmarks" routerLink="" (click)="change_active('Bookmarks')" *ngIf="login_check">Bookmarks</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs" id="Create" routerLink="create" (click)="change_active('Create')" *ngIf="login_check">Create</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs" id="Profile" routerLink="" (click)="change_active('Profile')" *ngIf="login_check">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs" routerLink="#" (click)="logout()" *ngIf="login_check">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link auth signup fs" routerLink="login" (click)="isShown = false" *ngIf="!login_check">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link auth login fs" routerLink="signup" (click)="isShown = false" *ngIf="!login_check">Signup</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -8,7 +8,7 @@ import { AuthenticationService } from './../shared/authentication.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+  isShown:boolean=false;
   login_check = this.AuthenticationService.check_login()
   small_screen = (window.innerWidth < 850) ? true : false;
   constructor(private Router:Router,
@@ -33,12 +33,27 @@ export class HeaderComponent implements OnInit {
 
   logout(){
     localStorage.removeItem('token');
+    setTimeout(() => {
+      location.reload();
+    }, 200);
+
     this.Router.navigateByUrl('')
-    location.reload();
   }
 
-  go_to_home(){
-    this.Router.navigateByUrl("/home")
+  change_active(to){
+    let list = [];
+    if(this.login_check){
+       list = ["Home", "About", "Attempts", "Bookmarks", "Create", "Profile"]
+    }
+    else{
+       list = ["Home", "About"]
+    }
+    for(let i = 0; i < list.length; i++){
+      document.getElementById(list[i]).style.color = "rgba(255,255,255,.5)"
+    }
+    console.log(to)
+    document.getElementById(to).style.color = "#fff"
+    this.isShown = false
   }
 
 }

@@ -20,8 +20,7 @@ import { CreateComponent } from './create/create.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-// import { ChartsModule } from 'ng2-charts';
-
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -35,7 +34,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     AboutmeComponent,
     SubmitPopupComponent,
     MyattemptsComponent,
-    CreateComponent
+    CreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +47,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

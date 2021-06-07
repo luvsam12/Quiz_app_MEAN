@@ -50,6 +50,17 @@
    display:block;
    width: 97%;
  }
+ .img{
+   width:75%
+ }
 
 
 }
+
+@media(min-width: 850px){
+  .img{
+    width:55%
+  }
+
+
+ }
