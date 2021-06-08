@@ -1,4 +1,5 @@
 @import url(//db.onlinewebfonts.com/c/ae4d61677409fb05a4ab1438837bcf69?family=ProximaNovaT-Thin);
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Mate+SC&display=swap');
 
 @font-face {font-family: "ProximaNovaT-Thin"; src: url("//db.onlinewebfonts.com/t/ae4d61677409fb05a4ab1438837bcf69.eot"); src: url("//db.onlinewebfonts.com/t/ae4d61677409fb05a4ab1438837bcf69.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/ae4d61677409fb05a4ab1438837bcf69.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/ae4d61677409fb05a4ab1438837bcf69.woff") format("woff"), url("//db.onlinewebfonts.com/t/ae4d61677409fb05a4ab1438837bcf69.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/ae4d61677409fb05a4ab1438837bcf69.svg#ProximaNovaT-Thin") format("svg"); }
 
@@ -18,18 +19,10 @@
 .naman{
     padding: 20px 10px 25px 10px;
     font-size: 30px;
-    font-family:cursive;
+    font-family: 'Cedarville Cursive', cursive;
+font-family: 'Mate SC', serif;
     text-align: center;
     color: rgb(238, 175, 81);
-}
-
-.coffee{
-  margin-left: 47%;
-  border-radius: 50px;
-  border: 1px solid white;
-  width: 127px;
-  font-weight: 100;
-  font-family: 'ProximaNovaT';
 }
 
 .image{
@@ -38,9 +31,10 @@
 }
 
 
- .skills, .about{
+ .heading{
   font-weight: bold;
-margin-top: 50px;
+margin-top: 20px;
+padding-top: 20px;
   text-align: center;
   padding-left: 40px;
   font-size: 30px;
@@ -78,3 +72,18 @@ margin-top: 50px;
 }
 
  }
+
+
+
+ .carousel{
+   margin-top: 50px;
+   background-color: indianred;
+   padding-bottom:50px;
+ }
+
+ .carousel-control-next-icon{
+  background-image: url('./../../assets/east_black_24dp.svg') !important
+}
+.carousel-control-prev-icon{
+ background-image: url('./../../assets/west_black_24dp.svg')
+}

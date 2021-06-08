@@ -21,6 +21,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ChartsModule } from 'ng2-charts';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    ChartsModule
+    ChartsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
