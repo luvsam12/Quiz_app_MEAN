@@ -1,26 +1,20 @@
-@import url(//db.onlinewebfonts.com/c/ae4d61677409fb05a4ab1438837bcf69?family=ProximaNovaT-Thin);
-@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Mate+SC&display=swap');
-
-@font-face {font-family: "ProximaNovaT-Thin"; src: url("//db.onlinewebfonts.com/t/ae4d61677409fb05a4ab1438837bcf69.eot"); src: url("//db.onlinewebfonts.com/t/ae4d61677409fb05a4ab1438837bcf69.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/ae4d61677409fb05a4ab1438837bcf69.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/ae4d61677409fb05a4ab1438837bcf69.woff") format("woff"), url("//db.onlinewebfonts.com/t/ae4d61677409fb05a4ab1438837bcf69.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/ae4d61677409fb05a4ab1438837bcf69.svg#ProximaNovaT-Thin") format("svg"); }
-
 
 .aboutme-container{
   margin-left: 1.5%;
   width: 97%;
-  // margin-top: 70px;
   height: 100%;
   margin-bottom: 100px;
 }
 .gif{
   text-align: center;
   background-color: antiquewhite;
+  padding: 60px;
 }
 
 .naman{
     padding: 20px 10px 25px 10px;
-    font-size: 30px;
-    font-family: 'Cedarville Cursive', cursive;
-font-family: 'Mate SC', serif;
+    font-size: 70px;
+    font-family: 'Sacramento', cursive;
     text-align: center;
     color: rgb(238, 175, 81);
 }
@@ -33,12 +27,11 @@ font-family: 'Mate SC', serif;
 
  .heading{
   font-weight: bold;
-margin-top: 20px;
-padding-top: 20px;
+  margin-top: 20px;
+  padding-top: 20px;
   text-align: center;
-  padding-left: 40px;
-  font-size: 30px;
-  font-family: monospace;
+  font-size: 40px;
+  font-family: 'Titillium Web', sans-serif;
   color: #3a3939;
 }
 
@@ -67,9 +60,9 @@ padding-top: 20px;
     width: 97%;
     text-align: center;
   }
-.intro{
-  width: 97%;
-}
+  .intro{
+    width: 97%;
+  }
 
  }
 
@@ -86,4 +79,30 @@ padding-top: 20px;
 }
 .carousel-control-prev-icon{
  background-image: url('./../../assets/west_black_24dp.svg')
+}
+
+.coffee-button{
+  height: 50px;
+  width: 180px;
+  border: 1px solid #004D7E;
+  background-color: transparent;
+  text-transform: uppercase;
+  color: #004D7E;
+  border-radius: 100px;
+}
+.coffee-button:hover{
+  color: #FAEBD7;
+  background-color: #004D7E;
+}
+
+.data-name{
+  font-family: 'Dosis', sans-serif;
+  font-size: 30px;
+  // padding: 5px;
+}
+
+.data-data{
+  font-size: 40px;
+  color: #004D7E;
+  font-family: 'Cuprum', sans-serif;
 }
