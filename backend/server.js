@@ -21,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use("/user", require("./routes/user"));
 app.use('/questions', require('./routes/questions'));
 app.use('/result', require("./routes/response"));
+app.use('/message', require("./routes/message"))
 
 
 //Database connection

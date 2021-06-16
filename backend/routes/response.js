@@ -5,7 +5,7 @@ const Result = require("../models/response")
 router.post('/', (req,res) => {
     const result = new Result({
         user_id: req.body.user_id,
-        score: req.body.score
+        score: req.body.score,
     });
     result.save()
     .then((data) => {

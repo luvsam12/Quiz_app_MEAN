@@ -7,27 +7,34 @@ const User = require("./../models/User");
 
 Router.post("/register", (req,res, next) => {
     let newUser = new User({
-        name: req.body.name,
-        email: req.body.email,
+        name: req.body.name.toLowerCase(),
+        email: req.body.email.toLowerCase(),
         password: req.body.password,
-        username: req.body.username
+        // username: req.body.username
     })
-
-    User.addUser(newUser, (err, user) => {
-        if(!user){
-            res.json({success: false, msg:'Failed to register user'});
+    // console.log(newUser)
+    User.findOne({email: newUser.email}, (err , user) => {
+        if(user != null) {
+            return res.json({success: false, msg:'Email already registered'});
         }
-        else {
-            res.json({success: true, msg:'User register'});
+        else{
+            User.addUser(newUser, (err, user) => {
+                if(!user){
+                    return res.json({success: false, msg:'Failed to register user'});
+                }
+                else {
+                    return res.json({success: true, msg:'User register'});
+                }
+            })
         }
     })
 })
 
 Router.post("/login", (req,res) => {
-    const username = req.body.username;
+    const email = req.body.email.toLowerCase();
     const password = req.body.password;
 
-    User.getUserByUsername(username , (err, user) => {
+    User.getUserByEmail(email , (err, user) => {
         if(err)
         throw err;
         if(!user) {
@@ -61,7 +68,6 @@ Router.post("/login", (req,res) => {
 })
 
 Router.get('/profile', passport.authenticate('jwt', {session:false}), (req,res,next) => {
-    console.log("naman")
     res.json({user:req.user});
 })
 module.exports = Router;

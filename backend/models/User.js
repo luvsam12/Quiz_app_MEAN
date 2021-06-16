@@ -16,10 +16,10 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    username: {
-    type: String,
-    required: true
-    }
+    // username: {
+    // type: String,
+    // required: true
+    // }
 
 })
 
@@ -29,8 +29,8 @@ module.exports.getUserId = function(id,callback){
     User.findById(id,callback);
 }
 
-module.exports.getUserByUsername = function(username,callback){
-    const querry = {username: username}
+module.exports.getUserByEmail = function(email,callback){
+    const querry = {email: email}
     User.findOne(querry, callback);
 };
 
