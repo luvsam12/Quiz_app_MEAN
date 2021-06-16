@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../shared/authentication.service';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ChartDataSets, ChartType, RadialChartOptions } from 'chart.js';
@@ -20,7 +21,7 @@ export class AboutmeComponent implements OnInit {
     },
     {
       name: "pixels rendered",
-      data: 154029
+      data: 153529
     },
     {
       name: "projects",
@@ -44,7 +45,6 @@ export class AboutmeComponent implements OnInit {
       name: "Steve Jobs"
     }
   ]
-  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 
   //core skills
   public radarChartOptions: RadialChartOptions = {
@@ -61,7 +61,8 @@ export class AboutmeComponent implements OnInit {
 
 
 
-  constructor(config: NgbCarouselConfig) {
+  constructor(config: NgbCarouselConfig,
+              private auth: AuthenticationService) {
     config.interval = 5000;
     config.wrap = true;
     config.keyboard = false;
@@ -69,7 +70,6 @@ export class AboutmeComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log(this.images)
     this.numberWithSpaces("lines")
     this.numberWithSpaces("pixels")
     this.numberWithSpaces("proj")
@@ -114,6 +114,14 @@ export class AboutmeComponent implements OnInit {
     setTimeout(()=>{
       document.getElementById('resume').click()
     },7000)
+  }
+
+  sendMessage(name, contact, message){
+    this.auth.send_message(name, contact, message).subscribe(
+      data => {
+
+      }
+    )
   }
 
 }

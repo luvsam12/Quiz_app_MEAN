@@ -1,15 +1,29 @@
-<!-- <div style="display: block;">
-  <canvas baseChart width="400" height="400"
-    [datasets]="lineChartData"
-    [labels]="lineChartLabels"
-    [options]="lineChartOptions"
-    [colors]="lineChartColors"
-    [legend]="lineChartLegend"
-    [chartType]="lineChartType"
-    [plugins]="lineChartPlugins">
-  </canvas>
-</div> -->
-<div class="middlescreen-container">
+<div class="heading">
+  Your Previous scores
+</div>
+<div class="no-results" *ngIf="data.length == 0">
+  No results to show. <br> Start your Journey to be a master
+</div>
+  <div class="chart">
+    <canvas baseChart
+      [datasets]="lineChartData"
+      [labels]="lineChartLabels"
+      [options]="lineChartOptions"
+      [colors]="lineChartColors"
+      [legend]="lineChartLegend"
+      [chartType]="lineChartType"
+      (chartHover)="chartHovered($event)"
+      (chartClick)="chartClicked($event)">
+    </canvas>
+  </div>
+
+  <div class="motivation">
+    "Keep Motivated and hustle till its achieved, its the only key for success"
+  </div>
+
+
+
+<!-- <div class="middlescreen-container">
   <table>
     <tr>
       <th>User_id</th>
@@ -22,6 +36,6 @@
       <td>{{data1.score}}</td>
     </tr>
   </table>
-</div>
+</div> -->
 
 

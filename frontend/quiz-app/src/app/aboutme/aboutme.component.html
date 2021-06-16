@@ -23,10 +23,12 @@
     </div>
   </div>
   <div style="border: 1px solid #c7ebf7; height: 1px;width: 80%; margin: 20px auto;"></div>
-  <div class="row" >
-    <div class="col-lg-4 col-md-4 col-sm-4" style="text-align: center;" *ngFor="let data of number_data">
-      <div class="data-data"> {{numberDisplay(data.data)}} </div>
-      <div class="data-name"> {{data.name}} </div>
+  <div style="  display: flex; flex-direction: row;">
+    <div style="text-align: center; width: 33%;" *ngFor="let data of number_data">
+      <div style="">
+        <div class="data-data"> {{numberDisplay(data.data)}} </div>
+        <div class="data-name"> {{data.name}} </div>
+      </div>
     </div>
   </div>
 
@@ -56,7 +58,7 @@
 
   <div class="carousel" style="z-index: 2;">
     <div class="heading">Inspiring Quotes</div>
-    <ngb-carousel *ngIf="images" style="text-align: center;">
+    <ngb-carousel style="text-align: center;">
       <ng-template ngbSlide *ngFor="let current_quote of quote_data">
         <div class="picsum-img-wrapper" >
           <img style="max-width: 70%;height: 200px; border-radius: 700px;" [src]="current_quote.person"  alt="Random first slide">

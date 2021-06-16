@@ -26,8 +26,9 @@
     "bootstrap": "^5.0.1",
     "chart.js": "^2.9.3",
     "core-js": "^3.14.0",
+    "moment": "^2.29.1",
     "ng-chartjs": "^0.2.3",
-    "ng2-charts": "^2.2.3",
+    "ng2-charts": "^2.4.2",
     "rxjs": "~6.6.0",
     "zone.js": "^0.11.4"
   },

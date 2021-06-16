@@ -5,4 +5,5 @@ export class AppConfig {
   public static LOGIN =    AppConfig.BASE_URL + '/user/login';
   public static SUBMIT = AppConfig.BASE_URL + '/result';
   public static RESPONSE = AppConfig.BASE_URL + '/result/data';
+  public static MESSAGE = AppConfig.BASE_URL + '/message';
 }

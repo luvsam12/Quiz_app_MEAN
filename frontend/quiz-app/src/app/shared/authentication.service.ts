@@ -11,19 +11,18 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
 
-  signup(name,email,password,username):Observable<signup>{
+  signup(name,email,password):Observable<signup>{
     let data = {
       name: name,
       email: email,
       password: password,
-      username: username
     }
     return this.http.post<signup>(`${AppConfig.SIGN_UP}`, data)
   }
 
-  login(username,pass):Observable<login>{
+  login(email,pass):Observable<login>{
     let data = {
-      username: username,
+      email: email,
       password: pass
     }
     return this.http.post<login>(`${AppConfig.LOGIN}`,data)
@@ -36,5 +35,12 @@ export class AuthenticationService {
       return true
     }
     return false
+  }
+
+  send_message(name, contact, message){
+    const data = {
+      name, contact, message
+    }
+    return this.http.post(`${AppConfig.MESSAGE}`, data);
   }
 }

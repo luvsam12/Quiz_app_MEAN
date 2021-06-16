@@ -1,8 +1,89 @@
-<div (click)="back()">Back</div>
+<!-- <div (click)="back()">Back</div>
 <div class="container">
   <input class="input" type="text" #name placeholder="name">
   <input class="input" type="email" #email placeholder="email">
   <input class="input" type="tpassword" #password placeholder="password">
   <input class="input" type="text" #username placeholder="username">
   <button class="login" (click)="signup(name.value,email.value,password.value, username.value)">Signup</button>
+</div> -->
+
+
+<div class="container1">
+  <div style="background-image: url(https://source.unsplash.com/random); width: 100%; height: 100%;">
+  </div>
+  <div class="signin-content">
+    <mat-card>
+      <mat-card-content>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <p>Please Sign up to continue</p>
+          <mat-form-field class="full-width-input">
+            <input matInput  type="text" placeholder="Full Name" formControlName="Name" required>
+            <mat-error *ngIf="isFieldInvalid('Name')">
+              Please enter your name
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width-input">
+            <input matInput  type="email" placeholder="Email" formControlName="email" required>
+            <mat-error *ngIf="isFieldInvalid('email')">
+              Please check your email
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width-input ">
+            <div style="display: flex; flex-direction: row;">
+              <input matInput [type]="showPassword ? 'text' : 'password'" placeholder="Password" formControlName="password" required>
+              <div (click)="show()">
+                <i alt="show" class="far fa-eye eye-show"
+                [class.hide]="showPassword"></i>
+                <i alt="hide" class="far fa-eye-slash eye-hide"
+                [class.hide]="!showPassword"></i>
+              </div>
+            </div>
+            <mat-error *ngIf="isFieldInvalid('password')">
+              Please check your password
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width-input">
+            <div style="display: flex; flex-direction: row;">
+              <input matInput [type]="showConfirmPassword ? 'text' : 'password'" placeholder="Confirm Password" formControlName="confirmPassword" required>
+              <div (click)="confirmShow()">
+                <i alt="show" class="far fa-eye eye-show"
+                [class.hide]="showConfirmPassword"></i>
+                <i alt="hide" class="far fa-eye-slash eye-hide"
+                [class.hide]="!showConfirmPassword"></i>
+              </div>
+            </div>
+            <mat-error *ngIf="isFieldInvalid('confirmPassword')">
+              Password Confirmation must match password
+            </mat-error>
+          </mat-form-field>
+          <mat-error *ngIf="registered" style="text-align: left;margin-bottom: 10px;">
+            Incorrect email or password
+          </mat-error>
+          <button mat-raised-button color="primary" type="submit">Sign up</button>
+          <mat-error *ngIf="error" style="text-align: left;margin-bottom: 10px;">
+            {{error}}
+          </mat-error>
+          <div class='hr-or'></div>
+          <div style="margin: 20px;">Already Registered?
+            <span style="color: cornflowerblue; cursor: pointer;" routerLink="/login">Login</span>
+          </div>
+          <div style=" display: flex; align-items: center; justify-content:center;">
+            <button mat-button style="padding: 4px;">
+            <img style="width: 40px; height:30px" src="./../../assets/certifications-logo.jpeg" alt="">
+             Sign up With Google
+            </button>
+          </div>
+          <div style=" display: flex; align-items: center; justify-content:center;">
+            <button mat-button style="padding: 4px;">
+              <img><i class="fab fa-linkedin" style="margin: 5px;zoom: 1.7; color:#0073B1"></i>
+             Sign up With LinkedIn
+            </button>
+          </div>
+
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+
 </div>

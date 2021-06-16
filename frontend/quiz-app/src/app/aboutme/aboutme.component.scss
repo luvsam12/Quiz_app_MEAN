@@ -4,6 +4,7 @@
   width: 97%;
   height: 100%;
   margin-bottom: 100px;
+  z-index: 1;
 }
 .gif{
   text-align: center;
@@ -72,6 +73,8 @@
    margin-top: 50px;
    background-color: indianred;
    padding-bottom:50px;
+   position: none;
+   z-index: 1;
  }
 
  .carousel-control-next-icon{
@@ -99,10 +102,12 @@
   font-family: 'Dosis', sans-serif;
   font-size: 30px;
   // padding: 5px;
+  z-index: 0;
 }
 
 .data-data{
   font-size: 40px;
   color: #004D7E;
   font-family: 'Cuprum', sans-serif;
+  z-index: 0;
 }

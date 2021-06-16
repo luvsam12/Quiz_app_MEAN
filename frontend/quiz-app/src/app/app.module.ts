@@ -22,6 +22,9 @@ import { MatInputModule } from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -45,8 +48,11 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     MatButtonModule,
     MatMenuModule,
     MatDialogModule,
+    MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
+    MatIconModule,
     FormsModule,
     ReactiveFormsModule,
     ChartsModule,

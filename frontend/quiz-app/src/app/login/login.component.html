@@ -1,7 +1,60 @@
-<div (click)="back()" class="back">Back</div>
-<div class="container">
 
-  <input class="input" type="text" #email placeholder="username"><br>
-  <input class="input" type="password" #password placeholder="password"><br>
-  <button mat-button class="login" (click)="login(email.value,password.value)">login</button>
+
+<div class="container1">
+  <div style="background-image: url(https://source.unsplash.com/random); width: 100%; height: 100%;">
+  </div>
+  <div class="signin-content">
+    <mat-card>
+      <mat-card-content>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <p>Please login to continue</p>
+          <mat-form-field class="full-width-input">
+            <input matInput  type="email" placeholder="Email" formControlName="email" required>
+            <mat-error *ngIf="isFieldInvalid('email')">
+              Please check your email
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width-input">
+            <div style="display: flex; flex-direction: row;">
+              <input matInput [type]="showPassword ? 'text' : 'password'" placeholder="Password" formControlName="password" required>
+              <div (click)="show()">
+                <i alt="show" class="far fa-eye eye-show"
+                [hidden]="showPassword"></i>
+                <i alt="hide" class="far fa-eye-slash eye-hide"
+                [hidden]="!showPassword"></i>
+              </div>
+            </div>
+            <mat-error *ngIf="isFieldInvalid('password')">
+              Please check your password
+            </mat-error>
+          </mat-form-field>
+          <mat-error *ngIf="registered" style="text-align: left;margin-bottom: 10px;">
+            Incorrect email or password
+          </mat-error>
+          <div style="margin: 0px 0px 5px 60%; color: cornflowerblue; cursor: pointer;" routerLink="forgetPassword">forgot password</div>
+          <button mat-raised-button color="primary" type="submit">Login</button>
+
+          <div class='hr-or'></div>
+          <div style="margin: 20px;">Don't have an account?
+            <span style="color: cornflowerblue; cursor: pointer;" routerLink="/signup">Sign up</span>
+          </div>
+          <div style=" display: flex; align-items: center; justify-content:center;">
+            <button mat-button style="padding: 4px;">
+            <img style="width: 40px; height:30px" src="./../../assets/certifications-logo.jpeg" alt="">
+             Login With Google
+            </button>
+          </div>
+          <div style=" display: flex; align-items: center; justify-content:center;">
+            <button mat-button style="padding: 4px;">
+              <img><i class="fab fa-linkedin" style="margin: 5px;zoom: 1.7; color:#0073B1"></i>
+             Login With LinkedIn
+            </button>
+          </div>
+
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+
 </div>
